@@ -68,8 +68,8 @@ CrÃ©er une nouvelle musique :
 Utilisez Rest Client pour tester l'api, avec un nouveau fichier "requests.http" dans le projet client contenant les requÃªtes suivantes :
 
 ```bash
-GET http://localhost:1337/chanteurs
-GET http://localhost:1337/musiques
+GET http://localhost:1337/api/chanteurs
+GET http://localhost:1337/api/musiques
 ```
 
 (Attention vous aurez besoin de gÃ©rer les droits de strapi pour accÃ©der Ã  ces donnÃ©es)
