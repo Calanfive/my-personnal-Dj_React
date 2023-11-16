@@ -5,6 +5,12 @@ GET http://localhost:3012/api/chanteurs
 GET  http://localhost:3012/api/musiques
 
 ###
+GET http://localhost:3012/api/musiques?filters[favoris][$eq]=true&populate=*
+
+###
+GET http://localhost:3012/api/musiques?sort=titre:asc&populate=*
+
+###
 POST http://localhost:3012/api/chanteurs
 content-type: application/json
 
@@ -24,7 +30,7 @@ content-type: application/json
     "data": {
         "titre": "Savoir aimer",
         "lien_youTube": "https://www.youtube.com/watch?v=Q3Kvu6Kgp88",
-        "{chanteur}": 6,
+        "chanteur": 6,
         "favoris": true,
         "dateDeSortie": "1950-03-18",
         "couleur_de_fond": "#134522"
