@@ -3,6 +3,7 @@ import { Link} from "react-router-dom";
 
 export default function Home() {
     const [songs, setSongs] = useState<any[]>([])
+    const [songsa, setSongsa] = useState<any[]>([])
 
     useEffect(() => {
         console.log('connexion1');
@@ -21,9 +22,9 @@ export default function Home() {
         const songsFromStrapi = async () => {
             const response = await fetch('http://localhost:3012/api/musiques?sort=titre:asc&populate=*')
             const data = await response.json()
-            console.log(data.data.map((music:any) => music));
+            console.log(data.data.map((musica:any) => musica));
             // .attributes.chanteur.data
-            setSongs(data.data)
+            setSongsa(data.data)
         }
         songsFromStrapi()
     }, []);
@@ -46,14 +47,14 @@ export default function Home() {
             </div>
             <h1>Affichage random</h1>
             <div className="randomDisplay homeDisplay">
-                {songs.map((music:any) => (
+                {songsa.map((musica:any) => (
                     <div className="musique">
                         <div className="title">
-                            {music.attributes.titre}
+                            {musica.attributes.titre}
                             </div>
                         <div className="title">
-                            {music.attributes.chanteur.data.attributes.prenom} 
-                            {music.attributes.chanteur.data.attributes.nom}
+                            {musica.attributes.chanteur.data.attributes.prenom} 
+                            {musica.attributes.chanteur.data.attributes.nom}
                             </div>
                     </div>
                 ))}

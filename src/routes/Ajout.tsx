@@ -42,7 +42,7 @@ export default function Ajout() {
                     "data": {
                         "titre": song,
                         "lien_youTube": linkYt,
-                        "{chanteur}": artist,
+                        "chanteur": artist,
                         "favoris": favorites,
                         "dateDeSortie": year,
                         "couleur_de_fond": color
